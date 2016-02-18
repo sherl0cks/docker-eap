@@ -7,13 +7,13 @@ FROM jboss/base-jdk:8
 MAINTAINER "Justin Holmes" "jholmes@redhat.com"
 
 ####### ENVIRONMENT ############
-ENV ARTIFACT_REPOSITORY http://download.eng.rdu2.redhat.com/released/JBEAP-6
+ENV ARTIFACT_REPOSITORY http://209.132.179.144
 ENV EAP_VERSION 6.4.4
 ENV JBOSS_HOME /opt/jboss/jboss-eap-6.4
 
 RUN cd /opt/jboss/ \
-	&& curl -O $ARTIFACT_REPOSITORY/$EAP_VERSION/jboss-eap-$EAP_VERSION-full-build.zip \
-	&& unzip -q jboss-eap-$EAP_VERSION-full-build.zip -d .  \ 
+	&& curl -O $ARTIFACT_REPOSITORY/jboss-eap-$EAP_VERSION-full-build.zip \
+	&& unzip -q jboss-eap-$EAP_VERSION-full-build.zip -d .  \
 	&& rm jboss-eap-$EAP_VERSION-full-build.zip
 
 # Expose the ports we're interested in
