@@ -8,7 +8,7 @@ MAINTAINER "Justin Holmes" "jholmes@redhat.com"
 
 ####### ENVIRONMENT ############
 ENV ARTIFACT_REPOSITORY http://209.132.179.144
-ENV EAP_VERSION 6.4.4
+ENV EAP_VERSION 6.4.5
 ENV JBOSS_HOME /opt/jboss/jboss-eap-6.4
 
 RUN cd /opt/jboss/ \
