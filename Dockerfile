@@ -7,12 +7,12 @@ FROM jboss/base-jdk:8
 MAINTAINER "Justin Holmes" "jholmes@redhat.com"
 
 ####### ENVIRONMENT ############
-ENV ARTIFACT_REPOSITORY http://209.132.179.144
-ENV EAP_VERSION 6.4.6
+ENV EAP_VERSION 6.4.8
 ENV JBOSS_HOME /opt/jboss/jboss-eap-6.4
 
+COPY jboss-eap-$EAP_VERSION-full-build.zip /opt/jboss
+
 RUN cd /opt/jboss/ \
-	&& curl -O $ARTIFACT_REPOSITORY/jboss-eap-$EAP_VERSION-full-build.zip \
 	&& unzip -q jboss-eap-$EAP_VERSION-full-build.zip -d .  \
 	&& rm jboss-eap-$EAP_VERSION-full-build.zip
 
